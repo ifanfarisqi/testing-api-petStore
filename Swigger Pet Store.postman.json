@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "76a86c6e-9d36-4641-8dcf-8c51ec922230",
+		"name": "Swigger Pet Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23805485"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"username\": \"orangdua\",\n  \"firstName\": \"orang\",\n  \"lastName\": \"dua\",\n  \"email\": \"orantdua@gmail.com\",\n  \"password\": \"orangdua123\",\n  \"phone\": \"324652\",\n  \"userStatus\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User with Array Input",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 2,\n    \"username\": \"orangdua\",\n    \"firstName\": \"orang\",\n    \"lastName\": \"dua\",\n    \"email\": \"orangdua@gmail.com\",\n    \"password\": \"orangdua123\",\n    \"phone\": \"32423456\",\n    \"userStatus\": 0\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/createWithArray",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"createWithArray"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User with List Input",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"id\": 3,\n    \"username\": \"orangtiga\",\n    \"firstName\": \"orang\",\n    \"lastName\": \"tiga\",\n    \"email\": \"orangtiga@gmail.com\",\n    \"password\": \"orangtiga123\",\n    \"phone\": \"6547567\",\n    \"userStatus\": 0\n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/createWithList",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"createWithList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/login?username=orangdua&password=orangdua123",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "orangdua"
+								},
+								{
+									"key": "password",
+									"value": "orangdua123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/orangdua",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"orangdua"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"username\": \"orangdua\",\n  \"firstName\": \"orang\",\n  \"lastName\": \"dua\",\n  \"email\": \"orangdua@gmail.com\",\n  \"password\": \"orangdua123\",\n  \"phone\": \"1234435\",\n  \"userStatus\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user/{orangdua}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"{orangdua}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/logout",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/user/orangdua",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user",
+								"orangdua"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Store Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"petId\": 2,\n  \"quantity\": 49,\n  \"shipDate\": \"2023-04-19T05:12:35.390Z\",\n  \"status\": \"placed\",\n  \"complete\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/store/order",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"store",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/store/order/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"store",
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Inventory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/store/inventory",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"store",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/store/order/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"store",
+								"order",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pet",
+			"item": [
+				{
+					"name": "Add Pet",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 1,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Carninora\"\n  },\n  \"name\": \"Cat\",\n  \"photoUrls\": [\n    \"dong1\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"Smart\"\n    }\n  ],\n  \"status\": \"available\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pet",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet with Form",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pet/2?id=2&name=Dog&status=None",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "name",
+									"value": "Dog"
+								},
+								{
+									"key": "status",
+									"value": "None"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload File",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photoUrls",
+									"type": "file",
+									"src": "/Users/ifanmuhammad/Downloads/download.jpeg"
+								},
+								{
+									"key": "name",
+									"value": "Cat",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/pet/1/uploadImage",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"1",
+								"uploadImage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pet/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pet by Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pet/findByTags/?tags=string",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"findByTags",
+								""
+							],
+							"query": [
+								{
+									"key": "tags",
+									"value": "string"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Pet by Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pet/findByStatus?status=available",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"findByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "available"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"category\": {\n    \"id\": 1,\n    \"name\": \"Carnivora\"\n  },\n  \"name\": \"Doggie\",\n  \"photoUrls\": [\n    \"Doggie1\"\n  ],\n  \"tags\": [\n    {\n      \"id\": 1,\n      \"name\": \"Cute\"\n    }\n  ],\n  \"status\": \"available\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/pet",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/pet/2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"pet",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
